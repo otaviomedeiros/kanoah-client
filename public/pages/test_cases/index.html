@@ -1,0 +1,54 @@
+<flash-message></flash-message>
+
+<h2>
+  Test Cases
+</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <form >
+      <div class="form-group">
+        <input ng-model="filterTestCases" type="text" class="form-control" placeholder="Filter test cases">
+      </div>
+    </form>
+  </div>
+  <div class="col-md-12">
+    <table class="table" ng-init="testCasesCtrl.loadTestCases()">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="testCase in testCasesCtrl.testCases | filter:filterTestCases">
+          <td>
+            <a href="#/testcases/{{ testCase.key }}">
+              {{ testCase.key}} {{ testCase.name }}
+            </a>
+          </td>
+          <td>
+            <span class="label label-{{ testCase.status.toLowerCase() }}">
+              {{ testCase.status }}
+            </span>
+          </td>
+          <td>
+            <div class="btn-group" ng-controller="TestResultsController as results">
+              <button type="button" class="btn btn-default" ng-click="results.pass(testCase)">Pass</button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a ng-click="results.pass(testCase)">Pass</a></li>
+                <li><a ng-click="results.fail(testCase)">Fail</a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

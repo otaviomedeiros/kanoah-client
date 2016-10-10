@@ -1,0 +1,41 @@
+<h2>
+  Test Case
+</h2>
+
+<div class="row test-case" ng-init="testCasesCtrl.getTestCase()">
+  <div class="col-md-12">
+    <h4>Name</h4>
+    <hr>
+    <p>{{ testCasesCtrl.testCase.name }}</p>
+
+    <h4>Objective</h4>
+    <hr>
+    <p ng-bind-html="testCasesCtrl.testCase.objective"></p>
+
+    <h4>Precondition</h4>
+    <hr>
+    <p ng-bind-html="testCasesCtrl.testCase.precondition"></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h4>Details</h4>
+    <hr>
+    <div class="col-md-2">
+      <h5>Status</h5>
+      <p>{{ testCasesCtrl.testCase.status }}</p>
+    </div>
+    <div class="col-md-2">
+      <h5>Priority</h5>
+      <p>{{ testCasesCtrl.testCase.priority }}</p>
+    </div>
+    <div class="col-md-2">
+      <h5>Owner</h5>
+      <p>{{ testCasesCtrl.testCase.owner }}</p>
+    </div>
+    <div class="col-md-2">
+      <h5>Estimated Time</h5>
+      <p>{{ testCasesCtrl.testCase.estimatedTime | date : "HH:mm" : "GMT" }}</p>
+    </div>
+  </div>
+</div>

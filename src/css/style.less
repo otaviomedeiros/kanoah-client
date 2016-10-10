@@ -1,0 +1,33 @@
+@import "~bootstrap/less/bootstrap";
+@import "flash-messages";
+
+a {
+  cursor: pointer;
+}
+
+.label {
+  &.label-draft {
+    .label-default;
+    background-color: #f0ad4e;
+  }
+
+  &.label-approved {
+    .label-default;
+    background-color: #5cb85c;
+  }
+
+  &.label-deprecated {
+    .label-default;
+    background-color: #5bc0de;
+  }
+}
+
+.test-case {
+  hr {
+    margin-top: 0px;
+  }
+
+  p {
+    margin-bottom: 50px;
+  }
+}
