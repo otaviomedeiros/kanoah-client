@@ -1,13 +1,38 @@
 # Kanoah Client
 Simple web client for Kanoah Test Manager
 
-## Steps to run the app
+## Steps to run the app 
 
 Clone the repo and cd into folder
 
 `git clone git@github.com:otaviomedeiros/kanoah-client.git`
 
 `cd kanoah-client/`
+
+## With Docker
+
+Build the image
+
+`docker-compose build`
+
+Create a `.env` file based on `.env.sample` and set username and password 
+
+Run the app container
+
+`docker-compose up`
+
+To develop you are gonna need to run a gulp task that watcher for changes in ES6 code and transpiles it to public/assests
+
+`docker exec app gulp watch`
+
+The app is gonna be accessible on port 8080
+
+Run tests
+
+`docker exec app npm test`
+
+
+## Without Docker
 
 Set some env vars
 
