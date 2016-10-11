@@ -1,0 +1,11 @@
+app:
+  build: .
+  container_name: app
+  command: nodemon -L backend/app.js 
+  ports:
+    - '8080:8080'
+  volumes:
+    - .:/app
+    - /app/node_modules
+  env_file:
+    - .env

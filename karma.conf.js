@@ -18,7 +18,8 @@ module.exports = function(config) {
           { test: /\.js/, exclude: /node_modules/, loader: 'babel' }
         ]
       },
-      watch: true
+      watch: true,
+      watchOptions: { poll: true }
     },
     webpackServer: {
       noInfo: true
