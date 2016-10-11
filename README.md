@@ -27,6 +27,8 @@ Finally, to run the app
 
 `npm start`
 
+Access `http://localhost:8080`
+
 To develop you are gonna need to run a gulp task that watcher for changes in ES6 code and transpiles it to public/assests
 
 `gulp watch`
