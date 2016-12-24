@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon backend/app.js",
-    "test": "karma start"
+    "test": "karma start --single-run"
   },
   "author": "Otavio Medeiros",
   "license": "ISC",
