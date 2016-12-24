@@ -2,6 +2,10 @@ machine:
   services:
     - docker
 
+dependencies:
+  override:
+    - docker-compose build
+
 test:
   override:
     - docker-compose run app npm test
