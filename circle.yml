@@ -3,5 +3,5 @@ machine:
     - docker
 
 test:
-  overrride:
+  override:
     - docker-compose run app npm test
