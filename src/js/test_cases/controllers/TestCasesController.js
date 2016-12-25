@@ -9,7 +9,7 @@ class TestCasesController {
   loadTestCases(){
     this.testCaseService
       .all()
-      .success(testCases => this.testCases = []);
+      .success(testCases => this.testCases = testCases);
   }
 
   getTestCase(){
