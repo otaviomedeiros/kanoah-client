@@ -16,7 +16,7 @@ deployment:
   dockerhub:
     branch: [master]
     commands:
-      - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PWD
+      - docker login -u $DOCKERHUB_USER -e $DOCKERHUB_EMAIL -p $DOCKERHUB_PWD
       - docker tag kanoahclient_app $DOCKERHUB_USER/kanoah-client:$CIRCLE_SHA1
       - docker tag kanoahclient_app $DOCKERHUB_USER/kanoah-client:latest
       - docker push $DOCKERHUB_USER/kanoah-client:$CIRCLE_SHA1
