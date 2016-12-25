@@ -3,8 +3,9 @@ machine:
     - docker
 
 dependencies:
-  override:
+  pre:
     - cp ci_conf/.env .
+  override:
     - docker-compose build
 
   override:
