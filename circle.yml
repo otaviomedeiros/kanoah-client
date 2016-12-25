@@ -4,11 +4,8 @@ machine:
 
 dependencies:
   override:
-    - docker-compose build
-
-test:
-  pre:
     - cp ci_conf/.env .
+    - docker-compose build
 
   override:
     - docker-compose run app npm test
