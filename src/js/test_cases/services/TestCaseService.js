@@ -8,12 +8,12 @@ class TestCaseService {
   }
 
   all(){
-    return this.$http.get("/testcase/search");
+    return this.$http.get("/testcase/search").then(response => response.data);
   }
 
 
   get(key){
-    return this.$http.get(`/testcase/${key}`);
+    return this.$http.get(`/testcase/${key}`).then(response => response.data);
   }
 
   static factory($http){

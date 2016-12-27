@@ -247,7 +247,7 @@ webpackJsonp([0],{
 	    value: function pass(testCase) {
 	      var _this = this;
 
-	      this.testResultService.postStatus(testCase, "Pass").success(function () {
+	      this.testResultService.postStatus(testCase, "Pass").then(function () {
 	        return _this.flash.success("Test Case saved with success");
 	      });
 	    }
@@ -256,7 +256,7 @@ webpackJsonp([0],{
 	    value: function fail(testCase) {
 	      var _this2 = this;
 
-	      this.testResultService.postStatus(testCase, "Fail").success(function () {
+	      this.testResultService.postStatus(testCase, "Fail").then(function () {
 	        return _this2.flash.success("Test Case saved with success");
 	      });
 	    }
@@ -298,7 +298,7 @@ webpackJsonp([0],{
 	    value: function loadTestCases() {
 	      var _this = this;
 
-	      this.testCaseService.all().success(function (testCases) {
+	      this.testCaseService.all().then(function (testCases) {
 	        return _this.testCases = testCases;
 	      });
 	    }
@@ -307,7 +307,7 @@ webpackJsonp([0],{
 	    value: function getTestCase() {
 	      var _this2 = this;
 
-	      this.testCaseService.get(this.$routeParams.key).success(function (testCase) {
+	      this.testCaseService.get(this.$routeParams.key).then(function (testCase) {
 	        return _this2.testCase = testCase;
 	      });
 	    }
@@ -348,12 +348,16 @@ webpackJsonp([0],{
 	  _createClass(TestCaseService, [{
 	    key: "all",
 	    value: function all() {
-	      return this.$http.get("/testcase/search");
+	      return this.$http.get("/testcase/search").then(function (response) {
+	        return response.data;
+	      });
 	    }
 	  }, {
 	    key: "get",
 	    value: function get(key) {
-	      return this.$http.get("/testcase/" + key);
+	      return this.$http.get("/testcase/" + key).then(function (response) {
+	        return response.data;
+	      });
 	    }
 	  }], [{
 	    key: "factory",

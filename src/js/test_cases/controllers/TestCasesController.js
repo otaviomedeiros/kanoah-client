@@ -9,13 +9,13 @@ class TestCasesController {
   loadTestCases(){
     this.testCaseService
       .all()
-      .success(testCases => this.testCases = testCases);
+      .then(testCases => this.testCases = testCases);
   }
 
   getTestCase(){
     this.testCaseService
       .get(this.$routeParams.key)
-      .success(testCase => this.testCase = testCase);
+      .then(testCase => this.testCase = testCase);
   }
 
 }
