@@ -7,7 +7,7 @@ describe("TestResultsController", () => {
   let service = {
     postStatus(t, s){
     },
-    success(c){
+    then(c){
     }
   };
 
@@ -31,7 +31,7 @@ describe("TestResultsController", () => {
       controller.fail(testCase);
       expect(service.postStatus).toHaveBeenCalledWith(testCase, "Fail");
     });
-    
+
   });
 
 });

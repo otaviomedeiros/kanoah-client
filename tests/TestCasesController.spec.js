@@ -20,7 +20,7 @@ describe("TestCasesController", () => {
           return this;
         },
 
-        success(callback){
+        then(callback){
           callback(testCases);
         }
       };
@@ -47,7 +47,7 @@ describe("TestCasesController", () => {
           return this;
         },
 
-        success(callback){
+        then(callback){
           callback(testCase);
         }
       };
